@@ -33,12 +33,7 @@ shell_agent = Agent(
 root_agent = Agent(
     name='my_agent',
     model='gemini-2.5-pro-exp-03-25',
-    # model='gemini-2.0-flash',
-    description=(
-        'Agent to answer questions using search engine and run commands in shell.'
-    ),
-    instruction=(
-        'I can search any information and prepare an answer. I can also run commands in shell terminal.'
-    ),
+    description='Agent to manage search agent and shell agent.',
+    instruction='I can search and run commands using other agents.',
     tools=[agent_tool.AgentTool(agent=search_agent), agent_tool.AgentTool(agent=shell_agent)],
 )
